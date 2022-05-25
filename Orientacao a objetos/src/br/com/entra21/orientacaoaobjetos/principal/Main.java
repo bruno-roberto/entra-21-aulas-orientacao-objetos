@@ -5,6 +5,8 @@ import java.util.Scanner;
 import br.com.entra21.orientacaoaobjetos.principal.aula01.classes.Aluno;
 import br.com.entra21.orientacaoaobjetos.principal.aula01.classes.Professor;
 import br.com.entra21.orientacaoaobjetos.principal.aula02.heranca.Diretor;
+import br.com.entra21.orientacaoaobjetos.principal.aula02.heranca.Funcionario;
+
 
 public class Main {
 
@@ -41,13 +43,9 @@ public class Main {
 	}
 
 	public static void aprenderClassesObjetos() {
-
-		Diretor diretor1 = new Diretor();
-		diretor1.realizarApresentacao();
-		Diretor diretor2 = new Diretor();
-		diretor2.realizarApresentacao();
-		Diretor diretor3 = new Diretor("Paulo", (byte) 80);
-		diretor3.realizarApresentacao();
+		
+	
+		
 
 		Professor professorJava = new Professor();
 		professorJava.setNome("Oliota");
@@ -96,7 +94,25 @@ public class Main {
 	}
 
 	public static void aprenderHeranca() {
+		
+		Funcionario funcinario1 = new Funcionario() ;
+		funcinario1.setIdade((byte) 22);
+		funcinario1.setNome("Bruno");
+		funcinario1.setCargoAtual("Analista");
+		funcinario1.setSalario(1500.00f);
+		
+		System.out.println("Oi, meu nome é " + funcinario1.getNome() + " e minha idade é " + funcinario1.getIdade() + " e ganho" + funcinario1.getSalario());
+		Funcionario funcionario2 = new Funcionario("Bruno", (byte) 22, "Cpf 312134", "programador jr", 2500.50f);
+		
+		
 
+		Diretor diretor1 = new Diretor();
+		diretor1.realizarApresentacao();
+		Diretor diretor2 = new Diretor();
+		diretor2.realizarApresentacao();
+		Diretor diretor3 = new Diretor("Paulo", (byte) 80, "Cpf 077355680-04", (byte)10);
+		diretor3.realizarApresentacao();
+		diretor3.setNome("Paulo");
 	}
 
 }
