@@ -6,13 +6,14 @@ Repositório com as práticas realizadas em aula
 > - Versionamento
 > - Linguagem markdown
 > - Documentação
-![Gif Entra21](/entra21.gif)
+
+![Gif Entra21](./entra21.gif)
 
 ## Aula Ministradas
 
-<a href="#"><img align="center" src="./giphy.gif" width="400 " height="300" /></a>
 
 | AULA | ASSUNTO |
 |------|---------|
 |Aula 01 - 01|Classes, objetos , encapsulamento e acesso estático
-|Aula 02 - 01|Herança                                     
+|Aula 02 - 01|Herança  
+|Aula 03 - 01|Polimorfismo                                   

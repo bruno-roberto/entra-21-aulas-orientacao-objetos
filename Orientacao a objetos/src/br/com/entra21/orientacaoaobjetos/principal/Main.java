@@ -6,61 +6,65 @@ import br.com.entra21.orientacaoaobjetos.principal.aula01.classes.Aluno;
 import br.com.entra21.orientacaoaobjetos.principal.aula01.classes.Professor;
 import br.com.entra21.orientacaoaobjetos.principal.aula02.heranca.Diretor;
 import br.com.entra21.orientacaoaobjetos.principal.aula02.heranca.Funcionario;
-
+import br.com.entra21.orientacaoaobjetos.principal.aula03.polimorfismo.Atleta;
+import br.com.entra21.orientacaoaobjetos.principal.aula03.polimorfismo.Nadador;
+import br.com.entra21.orientacaoaobjetos.principal.aula03.polimorfismo.Velocista;
 
 public class Main {
 
+	// o objeto da classe Scanner esta na variavel de entrada, então é um obj
+	// porem o System.in é uma chamada static pq
+	// para acessar o in do System nao precisei dar new
 	static Scanner input = new Scanner(System.in);
 
 	public static void main(String[] args) {
 
-		byte opcao;
-
+		byte option;
 		do {
-			System.out.println("Escolha uma opção");
-			System.out.println("0 - Sair");
-			System.out.println("1 - Aprender classes");
-			System.out.println("2 - Aprender herança");
+			System.out.println(" Escolha uma opção");
+			System.out.println("0- Sair ");
+			System.out.println("1- Classes");
+			System.out.println("2- Herança");
 
-			opcao = input.nextByte();
+			option = input.nextByte();
 
-			switch (opcao) {
+			switch (option) {
+
 			case 0:
-				System.out.println("Saindo");
+				System.out.println("Saindo...");
 				break;
 			case 1:
 				aprenderClassesObjetos();
 				break;
 			case 2:
-				aprenderHeranca();
+				aprendendoHeranca();
 				break;
 			default:
-				System.out.println("Escolha uma opção válida");
 				break;
+
 			}
-		} while (opcao != 0);
+
+		} while (option != 0);
 
 	}
 
 	public static void aprenderClassesObjetos() {
-		
-	
-		
+		Funcionario funcionario1 = new Funcionario();
 
-		Professor professorJava = new Professor();
-		professorJava.setNome("Oliota");
 		Professor professoraIngles = new Professor("Isabelle", (byte) 30);
 
 		System.out.println("Nome dela = " + professoraIngles.getNome());
 
 		professoraIngles.setNome("Isabelle 2");
 
+		System.out.println("agora o nome  dela = " + professoraIngles.getNome());
+		System.out.println("A idade dela é " + professoraIngles.getIdade());
+
+		System.out.println("Os professoes trabalham na " + Professor.instituicao);
+
 		Aluno alunoTeste = new Aluno();
-		// alunoTeste.nome = "Stephanie";
 
 		Aluno outroAluno = new Aluno();
-		outroAluno = null;
-		outroAluno = new Aluno();
 
 		Aluno alunoNovato = new Aluno();
 
@@ -70,49 +74,80 @@ public class Main {
 
 		alunoObjeto.idade = 18;
 
-		alunoTeste.nome = "Stephanie";
-		alunoTeste.idade = 28;
+		alunoTeste.nome = "Rubem";
+		alunoTeste.idade = 33;
 
-		outroAluno.nome = "Henrique";
-		outroAluno.idade = 5;
-
+		outroAluno.idade = 18;
+		outroAluno.nome = "Visitante";
 		alunoTeste.responderChamada();
 		alunoTeste.responderChamada();
 		alunoTeste.responderChamada();
 		alunoTeste.responderChamada();
 
 		/*
-		 * System.out.println("Qual o nome do aluno novato?"); alunoNovato.nome =
-		 * input.next();
+		 * System.out.println("Qual o nome do aluno novato?");
+		 * alunoNovato.nome=entrada.next();
 		 * 
-		 * System.out.println("Qual a idade do " + alunoNovato.nome + "?");
-		 * alunoNovato.idade = input.nextByte();
+		 * System.out.println("Qual a idade do "+alunoNovato.nome+"?");
+		 * alunoNovato.idade=entrada.nextByte();
 		 * 
-		 * System.out.println("Bem vindo " + alunoNovato.nome);
+		 * System.out.println("Bem vindo "+alunoNovato.nome);
 		 */
 
 	}
 
-	public static void aprenderHeranca() {
-		
-		Funcionario funcinario1 = new Funcionario() ;
-		funcinario1.setIdade((byte) 22);
-		funcinario1.setNome("Bruno");
-		funcinario1.setCargoAtual("Analista");
-		funcinario1.setSalario(1500.00f);
-		
-		System.out.println("Oi, meu nome é " + funcinario1.getNome() + " e minha idade é " + funcinario1.getIdade() + " e ganho" + funcinario1.getSalario());
-		Funcionario funcionario2 = new Funcionario("Bruno", (byte) 22, "Cpf 312134", "programador jr", 2500.50f);
-		
-		
+	public static void aprendendoHeranca() {
 
-		Diretor diretor1 = new Diretor();
-		diretor1.realizarApresentacao();
-		Diretor diretor2 = new Diretor();
-		diretor2.realizarApresentacao();
-		Diretor diretor3 = new Diretor("Paulo", (byte) 80, "Cpf 077355680-04", (byte)10);
-		diretor3.realizarApresentacao();
-		diretor3.setNome("Paulo");
+	}
+
+	public static void learningPolimorfismo() {
+		Atleta messi = new Atleta();
+		messi.comemorarWin();
+		messi.learnigWithLoss();
+
+		Nadador cleidomar = new Nadador("Cleidomar", (byte) 38, 15, 14, "mar", "sunga");
+		cleidomar.comemorarWin();
+		cleidomar.learnigWithLoss();
+		cleidomar.setName("Cleidomar Rovson");
+	}
+
+	public static void aprenderClassesPolimorfismo() {
+
+		// padrão de polimorfismo para comportamentos(métodos) é herdar.
+
+		// segunda forma do polimorfismo é fazer completamente os
+		// comportamentos(métodos) do meu jeito.
+
+		// terceira forma do polimorfismo é aproveitar a minha herança e fazer um
+		// diferencial.
+
+		Atleta cr7 = new Atleta();
+
+		cr7.setName("Cristiano Ronaldo");
+		cr7.comemorarWin();
+
+		System.out.println("----------------------------");
+
+		Nadador michaelPhelps = new Nadador();
+
+		michaelPhelps.setName("Michael Phelps");
+
+		Nadador sergioMichael = new Nadador("Sérgio Michael", (byte) 39, 23, 40, "Piscína", "Sunga e Touca");
+
+		sergioMichael.comemorarWin(); // procura primeiro na minha classe Nadador, se não tiver busca na herança.
+
+		michaelPhelps.comemorarWin();
+
+		System.out.println("----------------------------");
+
+		Velocista usainBolt = new Velocista();
+
+		usainBolt.setName("Usain Bolt");
+
+		usainBolt.comemorarWin();
+
+		System.out.println("----------------------------");
+
 	}
 
 }
